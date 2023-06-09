@@ -1,0 +1,43 @@
+.containerFiles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100vh;
+}
+
+.dashedContainer {
+  background: rgba(0, 128, 220, 0.08);
+  border: 2px dashed #0080dc;
+  border-radius: 24px;
+  width: 25rem;
+  height: 25rem;
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.dashedContainer:hover {
+  background: rgba(0, 128, 220, 0.18);
+
+}
+
+
+.dashedContainer span {
+  color: gray;
+}
+
+.dashedContainer p { 
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.iconUpload{ 
+  font-size: 10rem;
+  color: white;
+}
