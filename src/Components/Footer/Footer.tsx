@@ -8,8 +8,8 @@ export const Footer = (): FooterProps => {
     <div className="footer">
       <span>SavySTL 2023 &copy; | Todos los derechos reservados. </span>
       <span className="iconsFooter">
-        <FaInstagram />
         <FaDiscord />
+        <FaInstagram />
       </span>
     </div>
   );

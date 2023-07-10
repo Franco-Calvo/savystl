@@ -10,7 +10,7 @@ export default function Navbar() {
         <Anchor to="/">INICIO</Anchor>
         <Anchor>NOSOTROS</Anchor>
         <Anchor>DISEÑOS PERSONALIZADOS</Anchor>
-        <Anchor>INGRESAR</Anchor>
+        <Anchor to="/login">INGRESAR</Anchor>
         {/* <Anchor to="/uploadfile">Subir Archivo</Anchor> */}
       </nav>
       {/* <ProfileNav /> */}
