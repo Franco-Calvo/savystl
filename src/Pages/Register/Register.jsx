@@ -27,10 +27,8 @@ export default function Register() {
       last_name: formInputs[1],
       password: formInputs[2],
       email: formInputs[3],
-      user_tag: formInputs[4],
-      dni: formInputs[5],
-      country: formInputs[6],
-      city: formInputs[7],
+      country: formInputs[4],
+      city: formInputs[5],
     };
 
     console.log(data);
@@ -69,16 +67,6 @@ export default function Register() {
         <span className="inputContainer">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" required />
-        </span>
-
-        <span className="inputContainer">
-          <label for="username">Nombre de usuario</label>
-          <input type="text" id="username" name="username" required />
-        </span>
-
-        <span className="inputContainer">
-          <label for="DNI">Dni</label>
-          <input type="text" id="DNI" name="DNI" required />
         </span>
 
         <span className="inputContainer">

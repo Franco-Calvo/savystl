@@ -33,7 +33,7 @@ form {
 }
 
 .buttonSubmit {
-  background: #4461f2;
+  background: linear-gradient(90deg, #0C79DD 0%, #4200FF 100%);
   border: none;
   outline: none;
   color: white;
@@ -46,5 +46,6 @@ form {
 }
 
 .buttonSubmit:hover {
-  background: #3045af;
+  background: linear-gradient(90deg, #0b69c2 0%, #3c02dd 100%);
+  box-shadow: inset;
 }

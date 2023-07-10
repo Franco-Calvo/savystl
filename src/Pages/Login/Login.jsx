@@ -5,10 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const formRef = useRef();
-  const navigate = useNavigate()
-
-
-  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
 
   async function handleSignIn(e) {
     e.preventDefault();
@@ -29,6 +26,10 @@ export default function Login() {
     try {
       const res = await axios.post(url, data);
       localStorage.setItem("token", res.data.token);
+
+      // Setear el ID del usuario en el localStorage
+      localStorage.setItem("userId", res.data.user._id);
+
       localStorage.setItem(
         "user",
         JSON.stringify({
@@ -44,7 +45,7 @@ export default function Login() {
       }, 3000);
     } catch (error) {
       // toast.error(error.res.data.message);
-    
+      console.log(error)
     }
   }
 
@@ -53,11 +54,11 @@ export default function Login() {
       <Toaster position="top-right" />
       <form ref={formRef} onSubmit={handleSignIn}>
         <span className="inputContainer">
-          <label for="username">Nombre de usuario</label>
+          <label htmlFor="username">Nombre de usuario</label>
           <input type="text" id="username" name="username" required />
         </span>
         <span className="inputContainer ">
-          <label for="password">Contraseña</label>
+          <label htmlFor="password">Contraseña</label>
           <input type="password" id="password" name="password" required />
         </span>
         <input
