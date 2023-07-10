@@ -3,7 +3,7 @@ import "./Register.css";
 import { useRef } from "react";
 import axios from "axios";
 import { Toaster, toast } from "sonner";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link as Anchor } from "react-router-dom";
 
 export default function Register() {
   const formRegister = useRef();
@@ -48,35 +48,110 @@ export default function Register() {
   return (
     <div className="formRegister">
       <Toaster position="top-right" />
+      <h3>Bienvenido a nuestra comunidad</h3>
+
+      <div className="circleGradient bouncing-circle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="256"
+          height="181"
+          viewBox="0 0 256 181"
+          fill="none"
+        >
+          <circle
+            cx="127.678"
+            cy="52.6784"
+            r="127.36"
+            transform="rotate(-0.143373 127.678 52.6784)"
+            fill="url(#paint0_radial_2_64)"
+          />
+          <defs>
+            <radialGradient
+              id="paint0_radial_2_64"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(190.282 -32.3436) rotate(103.529) scale(218.434)"
+            >
+              <stop offset="0.181218" stop-color="#2EB7B7" />
+              <stop offset="0.667423" stop-color="#0C79DD" />
+              <stop offset="0.992812" stop-color="#042646" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+      <div className="circleGradientCopy bouncing-circle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="138"
+          height="138"
+          viewBox="0 0 138 138"
+          fill="none"
+        >
+          <circle
+            cx="68.8654"
+            cy="68.8654"
+            r="68.6937"
+            transform="rotate(-0.143373 68.8654 68.8654)"
+            fill="url(#paint0_radial_2_61)"
+          />
+          <defs>
+            <radialGradient
+              id="paint0_radial_2_61"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(38.3349 33.2464) rotate(59.144) scale(115.955)"
+            >
+              <stop stop-color="#646464" />
+              <stop offset="0.604593" stop-color="#292929" />
+              <stop offset="0.796202" stop-color="#0F0F0F" />
+              <stop offset="1" stop-color="#1B1B1B" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
       <form ref={formRegister}>
         <span className="inputContainer">
-          <label for="name">Nombre</label>
-          <input type="text" id="name" name="name" required />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Nombre"
+          />
         </span>
 
         <span className="inputContainer">
-          <label for="lastname">Apellido</label>
-          <input type="text" id="lastname" name="lastname" required />
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            required
+            placeholder="Apellido"
+          />
         </span>
 
         <span className="inputContainer">
-          <label for="password">Contraseña</label>
-          <input type="password" id="password" name="password" required />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Contraseña"
+          />
         </span>
 
         <span className="inputContainer">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-        </span>
-
-        <span className="inputContainer">
-          <label for="pais">País</label>
-          <input type="text" id="pais" name="pais" required />
-        </span>
-
-        <span className="inputContainer">
-          <label for="ciudad">Ciudad</label>
-          <input type="text" id="ciudad" name="ciudad" required />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Email"
+          />
         </span>
 
         <input
@@ -86,6 +161,15 @@ export default function Register() {
           value="Registrarse"
         />
       </form>
+      <span className="labelBottom">
+        <span className="notAccount">
+          ¿Ya tienes cuenta?{" "}
+          <Anchor className="actionSignUp" to="/login">
+            Ingresar
+          </Anchor>
+        </span>
+        <span className="passwordRecover">Olvidé mi contraseña</span>
+      </span>
     </div>
   );
 }
