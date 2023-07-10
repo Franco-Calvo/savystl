@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Login.css";
 import { Toaster, toast } from "sonner";
 import { useNavigate } from "react-router-dom";
+import { Link as Anchor } from "react-router-dom";
 
 export default function Login() {
   const formRef = useRef();
@@ -54,6 +55,69 @@ export default function Login() {
     <div className="formLogin">
       <Toaster position="top-right" />
       <h3>Nos alegra verte por aquí</h3>
+      <div className="circleGradient bouncing-circle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="256"
+          height="181"
+          viewBox="0 0 256 181"
+          fill="none"
+        >
+          <circle
+            cx="127.678"
+            cy="52.6784"
+            r="127.36"
+            transform="rotate(-0.143373 127.678 52.6784)"
+            fill="url(#paint0_radial_2_64)"
+          />
+          <defs>
+            <radialGradient
+              id="paint0_radial_2_64"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(190.282 -32.3436) rotate(103.529) scale(218.434)"
+            >
+              <stop offset="0.181218" stop-color="#2EB7B7" />
+              <stop offset="0.667423" stop-color="#0C79DD" />
+              <stop offset="0.992812" stop-color="#042646" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+      <div className="circleGradientCopy bouncing-circle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="138"
+          height="138"
+          viewBox="0 0 138 138"
+          fill="none"
+        >
+          <circle
+            cx="68.8654"
+            cy="68.8654"
+            r="68.6937"
+            transform="rotate(-0.143373 68.8654 68.8654)"
+            fill="url(#paint0_radial_2_61)"
+          />
+          <defs>
+            <radialGradient
+              id="paint0_radial_2_61"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(38.3349 33.2464) rotate(59.144) scale(115.955)"
+            >
+              <stop stop-color="#646464" />
+              <stop offset="0.604593" stop-color="#292929" />
+              <stop offset="0.796202" stop-color="#0F0F0F" />
+              <stop offset="1" stop-color="#1B1B1B" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
       <form ref={formRef} onSubmit={handleSignIn}>
         <span className="inputContainer">
           <input
@@ -82,7 +146,8 @@ export default function Login() {
       </form>
       <span className="labelBottom">
         <span className="notAccount">
-          ¿No tienes cuenta? <span className="actionSignUp">Regístrate</span>
+          ¿No tienes cuenta?{" "}
+          <Anchor className="actionSignUp" to="/register">Regístrate</Anchor>
         </span>
         <span className="passwordRecover">Olvidé mi contraseña</span>
       </span>
