@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import axios from "axios";
+import "./Login.css";
 import { Toaster, toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 
@@ -45,21 +46,32 @@ export default function Login() {
       }, 3000);
     } catch (error) {
       // toast.error(error.res.data.message);
-      console.log(error)
+      console.log(error);
     }
   }
 
   return (
-    <div className="formRegister">
+    <div className="formLogin">
       <Toaster position="top-right" />
+      <h3>Nos alegra verte por aquí</h3>
       <form ref={formRef} onSubmit={handleSignIn}>
         <span className="inputContainer">
-          <label htmlFor="username">Nombre de usuario</label>
-          <input type="text" id="username" name="username" required />
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            placeholder="Correo electrónico"
+          />
         </span>
         <span className="inputContainer ">
-          <label htmlFor="password">Contraseña</label>
-          <input type="password" id="password" name="password" required />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Contraseña"
+          />
         </span>
         <input
           onClick={handleSignIn}
@@ -68,6 +80,12 @@ export default function Login() {
           value="Iniciar sesión"
         />
       </form>
+      <span className="labelBottom">
+        <span className="notAccount">
+          ¿No tienes cuenta? <span className="actionSignUp">Regístrate</span>
+        </span>
+        <span className="passwordRecover">Olvidé mi contraseña</span>
+      </span>
     </div>
   );
 }

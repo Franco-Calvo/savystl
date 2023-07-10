@@ -1,0 +1,47 @@
+.formLogin {
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  gap: 2rem;
+}
+
+.inputContainer input::placeholder {
+  color: #ffffff7e;
+  text-align: flex-start;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.actionSignUp {
+  font-weight: 400;
+  cursor: pointer;
+  color: white;
+}
+.actionSignUp:hover {
+  color: #0094ff;
+}
+
+.passwordRecover {
+  font-weight: 400;
+  cursor: pointer;
+  color: white;
+}
+.passwordRecover:hover {
+  color: #0094ff;
+}
+
+.notAccount {
+  font-weight: 200;
+}
+
+.labelBottom {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.3rem;
+}

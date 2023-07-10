@@ -9,3 +9,23 @@
 body {
   background-color: #010006;
 }
+
+/* Ancho y color del track */
+::-webkit-scrollbar {
+  width: 4px;
+  background: transparent;
+  border-radius: 12px;
+
+}
+
+/* Color del thumb (el "mango" del scrollbar) */
+::-webkit-scrollbar-thumb {
+  background-color: #0094ff;
+  border-radius: 12px;
+}
+
+/* Al pasar el cursor sobre el thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0275c7;
+}
+

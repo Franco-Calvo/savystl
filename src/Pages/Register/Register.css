@@ -23,17 +23,17 @@ form {
 
 .inputContainer input {
   border: none;
-  outline: none;
-  color: rgb(0, 0, 0);
-  padding: .5rem  ;
-  background-color: #eaf0f7;
+  border: 2px solid #30303d;
+  color: rgba(255, 255, 255, 0.589);
+  padding: 0.5rem;
+  background: transparent;
   width: 100%;
-  height: 2rem;
+  height: 2.5rem;
   border-radius: 10px;
 }
 
 .buttonSubmit {
-  background: linear-gradient(90deg, #0C79DD 0%, #4200FF 100%);
+  background: linear-gradient(90deg, #0c79dd 0%, #4200ff 100%);
   border: none;
   outline: none;
   color: white;
