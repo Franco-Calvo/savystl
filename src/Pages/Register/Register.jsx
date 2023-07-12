@@ -27,8 +27,6 @@ export default function Register() {
       last_name: formInputs[1],
       password: formInputs[2],
       email: formInputs[3],
-      country: formInputs[4],
-      city: formInputs[5],
     };
 
     console.log(data);
