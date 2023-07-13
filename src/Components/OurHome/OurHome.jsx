@@ -1,6 +1,7 @@
 import React from "react";
 import "./OurHome.css";
 
+
 export default function OurHome() {
   return (
     <div className="OurHome">
