@@ -5,6 +5,7 @@ import Register from "./Register/Register";
 import Login from "./Login/Login";
 import Files from "./Files/Files";
 import Subscriptions from "./Subscriptions/Subscriptions";
+import Explorer from "./Explorer/Explorer";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
       { path: "/login", element: <Login /> },
       { path: "/uploadfile", element: <Files /> },
       { path: "/subscription", element: <Subscriptions /> },
+      { path: "/explorer", element: <Explorer /> },
     ],
   },
 ]);
