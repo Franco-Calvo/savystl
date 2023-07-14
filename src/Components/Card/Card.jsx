@@ -1,6 +1,7 @@
 import React from "react";
 import "./Card.css";
 import productImage from "../Images/product-image.png";
+import Button from "../Button/Button";
 
 export default function Card() {
   return (
@@ -15,10 +16,7 @@ export default function Card() {
           Este no es un simple gatito, este gato contiene la sabiduría de
           antiguos ancestros egipcios, adópta uno y averígualo por ti mismo.
         </p>
-      </div>
-
-      <div className="card-button">
-        <button>DESCARGAR</button>
+        <Button text="asd" />
       </div>
     </div>
   );
