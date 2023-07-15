@@ -29,8 +29,6 @@ export default function Register() {
       email: formInputs[3],
     };
 
-    console.log(data);
-
     try {
       const response = await axios.post(url, data);
       toast.success(response.data.message);

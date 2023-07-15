@@ -5,50 +5,49 @@ import axios from "axios";
 import { Toaster, toast } from "sonner";
 
 export default function Files() {
-  const fileInputRef = useRef(null);
-  const imageInputRef = useRef(null);
+  const fileInputRef = useRef();
+  const imageInputRef = useRef();
+  const url = "http://localhost:8000/aws/upload";
 
-  const url = "http://localhost:8000/upload";
-
-  async function handleUpload() {
-    const file = fileInputRef.current.files[0];
-    const name = imageInputRef.current.files[0];
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("name", name); // Agrega los datos adicionales necesarios
-
+  const handleUpload = async () => {
     try {
-      const res = await axios.post(url, formData, {
+      const formData = new FormData();
+      formData.append("file", fileInputRef.current.files[0]);
+      formData.append("image", imageInputRef.current.files[0]);
+      const token = localStorage.getItem("token");
+      const response = await axios.post(url, formData, {
         headers: {
-          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
         },
       });
-      toast.success(res.data.message);
+      toast.success(response.data.message);
     } catch (error) {
-      toast.error(error.message);
+      console.error(error);
+      toast.error("Error al subir los archivos");
     }
-  }
-
-  function handleClick() {
-    fileInputRef.current.click();
-  }
-
+  };
   return (
     <div className="containerFiles">
       <Toaster position="top-right" />
-      <div className="dashedContainer" onClick={handleClick}>
+      <input type="text" name="name" id="name" placeholder="Nombre" />
+      <input
+        type="text"
+        name="description"
+        id="description"
+        placeholder="Descripción"
+      />
+      <div className="dashedContainer">
         <RiUploadCloud2Line className="iconUpload" />
         <p>Selecciona un archivo de tu dispositivo</p>
         <span>max. 10MB</span>
         <input
           type="file"
-          name="file"
           ref={fileInputRef}
+          name="file"
           style={{ display: "none" }}
         />
       </div>
-
-      <div className="dashedContainer" onClick={handleClick}>
+      <div className="dashedContainer">
         <RiUploadCloud2Line className="iconUpload" />
         <p>Selecciona una imagen de tu dispositivo</p>
         <span>max. 10MB</span>
@@ -59,23 +58,6 @@ export default function Files() {
           style={{ display: "none" }}
         />
       </div>
-      <span>
-        <label htmlFor="">Nombre</label>
-        <input type="text" placeholder="Nombre" />
-      </span>
-      <span>
-        <label htmlFor="">Nombre</label>
-        <input type="text" placeholder="Nombre" />
-      </span>
-      <span>
-        <label htmlFor="">Nombre</label>
-        <input type="text" placeholder="Nombre" />
-      </span>
-      <span>
-        <label htmlFor="">Nombre</label>
-        <input type="text" placeholder="Nombre" />
-      </span>
-      <input type="file" ref={fileInputRef} style={{ display: "none" }} />
       <button className="buttonSubmit" onClick={handleUpload}>
         Subir
       </button>

@@ -3,7 +3,7 @@ import React from "react";
 import { RiCheckFill } from "react-icons/ri";
 import "./Subscriptions.css";
 
-export default function Home() {
+export default function Subscriptions() {
   const [userEmail, setUserEmail] = React.useState("");
 
   const handlePayment = async () => {
