@@ -4,18 +4,15 @@ import { RiCheckFill } from "react-icons/ri";
 import "./Subscriptions.css";
 
 export default function Subscriptions() {
-  const [userEmail, setUserEmail] = React.useState("");
-
-  const handlePayment = async () => {
-    const userEmail = "franco@savy.com";
-    setUserEmail(userEmail);
+  const handlePayment = async (subscriptionType) => {
+    const userEmail = JSON.parse(localStorage.getItem("user")).email;
 
     try {
       const res = await axios.post("http://localhost:8000/create-order", {
         email: userEmail,
+        subscriptionType: subscriptionType,
       });
       const urlToPay = res.data.init_point;
-
       window.open(urlToPay, "_blank");
     } catch (error) {
       console.log(error);
@@ -41,6 +38,7 @@ export default function Subscriptions() {
             className="buttonSubmit"
             type="submit"
             value="Comprar este plan"
+            onClick={() => handlePayment("day")}
           />
         </div>
         <div className="oneDay">
@@ -59,7 +57,7 @@ export default function Subscriptions() {
             className="buttonSubmit"
             type="submit"
             value="Comprar este plan"
-            onClick={handlePayment}
+            onClick={() => handlePayment("month")}
           />
         </div>
         <div className="oneDay">
@@ -78,6 +76,7 @@ export default function Subscriptions() {
             className="buttonSubmit"
             type="submit"
             value="Comprar este plan"
+            onClick={() => handlePayment("year")}
           />
         </div>
       </div>

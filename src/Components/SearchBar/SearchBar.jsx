@@ -1,13 +1,11 @@
 import React from "react";
-import "./SearchBar.css";
-import { Link as Anchor } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
+import "./SearchBar.css";
 
 export default function SearchBar() {
   return (
-    <div class="search-bar">
+    <div className="search-bar">
       <input type="text" />
-
       <button>
         <FaSearch className="search-icon" />
       </button>

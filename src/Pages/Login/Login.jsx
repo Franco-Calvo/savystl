@@ -1,9 +1,8 @@
-import React, { useRef } from "react";
 import axios from "axios";
-import "./Login.css";
+import React, { useRef } from "react";
+import { Link as Anchor, useNavigate } from "react-router-dom";
 import { Toaster, toast } from "sonner";
-import { useNavigate } from "react-router-dom";
-import { Link as Anchor } from "react-router-dom";
+import "./Login.css";
 
 export default function Login() {
   const formRef = useRef();
@@ -28,17 +27,13 @@ export default function Login() {
     try {
       const res = await axios.post(url, data);
       localStorage.setItem("token", res.data.token);
-
-      // Setear el ID del usuario en el localStorage
       localStorage.setItem("userId", res.data.user._id);
-
       localStorage.setItem(
         "user",
         JSON.stringify({
           name: res.data.user.name,
           last_name: res.data.user.last_name,
           email: res.data.user.email,
-          user_tag: res.data.user.user_tag,
         })
       );
       toast.success(res.data.message);
@@ -46,7 +41,7 @@ export default function Login() {
         navigate("/uploadfile");
       }, 3000);
     } catch (error) {
-      // toast.error(error.res.data.message);
+      toast.error(error.res.data.message);
       console.log(error);
     }
   }
@@ -79,9 +74,9 @@ export default function Login() {
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(190.282 -32.3436) rotate(103.529) scale(218.434)"
             >
-              <stop offset="0.181218" stop-color="#2EB7B7" />
-              <stop offset="0.667423" stop-color="#0C79DD" />
-              <stop offset="0.992812" stop-color="#042646" />
+              <stop offset="0.181218" stopColor="#2EB7B7" />
+              <stop offset="0.667423" stopColor="#0C79DD" />
+              <stop offset="0.992812" stopColor="#042646" />
             </radialGradient>
           </defs>
         </svg>
@@ -110,10 +105,10 @@ export default function Login() {
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(38.3349 33.2464) rotate(59.144) scale(115.955)"
             >
-              <stop stop-color="#646464" />
-              <stop offset="0.604593" stop-color="#292929" />
-              <stop offset="0.796202" stop-color="#0F0F0F" />
-              <stop offset="1" stop-color="#1B1B1B" />
+              <stop stopColor="#646464" />
+              <stop offset="0.604593" stopColor="#292929" />
+              <stop offset="0.796202" stopColor="#0F0F0F" />
+              <stop offset="1" stopColor="#1B1B1B" />
             </radialGradient>
           </defs>
         </svg>
@@ -147,7 +142,9 @@ export default function Login() {
       <span className="labelBottom">
         <span className="notAccount">
           ¿No tienes cuenta?{" "}
-          <Anchor className="actionSignUp" to="/register">Regístrate</Anchor>
+          <Anchor className="actionSignUp" to="/register">
+            Regístrate
+          </Anchor>
         </span>
         <span className="passwordRecover">Olvidé mi contraseña</span>
       </span>
