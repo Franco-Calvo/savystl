@@ -70,9 +70,9 @@ export default function Register() {
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(190.282 -32.3436) rotate(103.529) scale(218.434)"
             >
-              <stop offset="0.181218" stop-color="#2EB7B7" />
-              <stop offset="0.667423" stop-color="#0C79DD" />
-              <stop offset="0.992812" stop-color="#042646" />
+              <stop offset="0.181218" stopColor="#2EB7B7" />
+              <stop offset="0.667423" stopColor="#0C79DD" />
+              <stop offset="0.992812" stopColor="#042646" />
             </radialGradient>
           </defs>
         </svg>
@@ -101,10 +101,10 @@ export default function Register() {
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(38.3349 33.2464) rotate(59.144) scale(115.955)"
             >
-              <stop stop-color="#646464" />
-              <stop offset="0.604593" stop-color="#292929" />
-              <stop offset="0.796202" stop-color="#0F0F0F" />
-              <stop offset="1" stop-color="#1B1B1B" />
+              <stop stopColor="#646464" />
+              <stop offset="0.604593" stopColor="#292929" />
+              <stop offset="0.796202" stopColor="#0F0F0F" />
+              <stop offset="1" stopColor="#1B1B1B" />
             </radialGradient>
           </defs>
         </svg>

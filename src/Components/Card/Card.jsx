@@ -1,22 +1,22 @@
 import React from "react";
 import "./Card.css";
-import productImage from "../Images/product-image.png";
 import Button from "../Button/Button";
 
-export default function Card() {
+export default function Card({ title, description, image, text, onClick }) {
   return (
     <div className="card-container">
       <div className="card-img">
-        <img src={productImage} alt="Producto" className="card-picture" />
+        <img src={image} alt="Producto" className="card-picture" />
       </div>
 
       <div className="card-body">
-        <h2>Llavero Gato Colgante </h2>
-        <p>
-          Este no es un simple gatito, este gato contiene la sabiduría de
-          antiguos ancestros egipcios, adópta uno y averígualo por ti mismo.
-        </p>
-        <Button text="asd" />
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <span className="containerDownload">
+          <button className="button-card" onClick={onClick}>
+            {text}
+          </button>
+        </span>
       </div>
     </div>
   );
